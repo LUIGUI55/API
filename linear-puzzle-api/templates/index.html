@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linear Puzzle Solver</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Linear Puzzle Solver</h1>
+        <form id="puzzleForm">
+            <label for="start_node">Start Node:</label>
+            <input type="text" id="start_node" name="start_node" required>
+            
+            <label for="end_node">End Node:</label>
+            <input type="text" id="end_node" name="end_node" required>
+            
+            <label for="algorithm">Algorithm:</label>
+            <select id="algorithm" name="algorithm" required>
+                <option value="bfs">BFS</option>
+                <option value="dfs">DFS</option>
+                <option value="recursive_dfs">Recursive DFS</option>
+            </select>
+            
+            <button type="submit">Solve</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    <script>
+        document.getElementById('puzzleForm').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            const start_node = document.getElementById('start_node').value;
+            const end_node = document.getElementById('end_node').value;
+            const algorithm = document.getElementById('algorithm').value;
+
+            const response = await fetch('/solve', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ start_node, end_node, algorithm })
+            });
+
+            const result = await response.json();
+            document.getElementById('result').innerText = JSON.stringify(result);
+        });
+    </script>
+</body>
+</html>

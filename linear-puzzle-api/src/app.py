@@ -1,9 +1,13 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from bfs import bfs
 from dfs import dfs
 from recursive_dfs import recursive_dfs
 
 app = Flask(__name__)
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 @app.route('/solve', methods=['POST'])
 def solve_puzzle():
@@ -25,3 +29,4 @@ def solve_puzzle():
 
 if __name__ == '__main__':
     app.run(debug=True)
+    
