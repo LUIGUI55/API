@@ -6,60 +6,64 @@
     <title>Resolver Puzle</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f7fa;
+            font-family: 'Roboto', sans-serif;
+            background-color: #1a1a1a;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            color: #333;
+            color: #e0e0e0;
         }
-
+    
         .container {
-            background-color: #fff;
+            background-color: #2a2a2a;
             padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             width: 500px;
             text-align: center;
         }
-
+    
         h2 {
-            color: #4CAF50;
-            font-size: 24px;
+            color: #ff6f61;
+            font-size: 28px;
             margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
-
+    
         label {
             font-weight: bold;
             display: block;
             margin-bottom: 8px;
             font-size: 16px;
+            color: #ff6f61;
         }
-
+    
         input {
             width: 100%;
             padding: 12px;
             margin-bottom: 20px;
-            border: 2px solid #ddd;
+            border: 2px solid #444;
             border-radius: 6px;
             font-size: 16px;
-            background-color: #f9f9f9;
+            background-color: #333;
+            color: #e0e0e0;
         }
-
+    
         input:focus {
-            border-color: #4CAF50;
-            background-color: #fff;
+            border-color: #ff6f61;
+            background-color: #444;
             outline: none;
         }
-
+    
         button {
             width: 100%;
             padding: 12px;
             margin-bottom: 12px;
-            background-color: #4CAF50;
+            background-color: #ff6f61;
             color: white;
             border: none;
             border-radius: 6px;
@@ -67,17 +71,17 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-
+    
         button:hover {
-            background-color: #45a049;
+            background-color: #ff3b2f;
         }
-
+    
         h3 {
             margin-top: 30px;
             font-size: 20px;
-            color: #333;
+            color: #e0e0e0;
         }
-
+    
         .resultado {
             display: flex;
             justify-content: center;
@@ -85,26 +89,29 @@
             flex-wrap: wrap;
             margin-top: 20px;
         }
-
+    
         .resultado span {
-            background-color: #f1f1f1;
+            background-color: #444;
             padding: 12px;
             border-radius: 6px;
             font-size: 16px;
-            color: #333;
-            border: 1px solid #ddd;
+            color: #e0e0e0;
+            border: 1px solid #555;
             min-width: 80px;
             text-align: center;
         }
-
+    
         .resultado span:nth-child(even) {
-            background-color: #e2f7e2;
+            background-color: #ff6f61;
+            color: #1a1a1a;
         }
-
+    
         .resultado span:nth-child(odd) {
-            background-color: #e2f0f7;
+            background-color: #6f61ff;
+            color: #1a1a1a;
         }
     </style>
+
 </head>
 <body>
     <div class="container">
